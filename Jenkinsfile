@@ -2,6 +2,17 @@ pipeline {
     agent any
 
     stages {
+       stage('Prepare Workspace') {
+            steps {
+                // Checkout the Git repository to Jenkins workspace
+                git 'https://github.com/yourusername/your-repo.git'
+
+                // Copy Dockerfile and application files into Jenkins workspace
+                sh 'cp Dockerfile .'
+                sh 'cp Hello.class .'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 // Build Docker image
