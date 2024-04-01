@@ -5,7 +5,7 @@ pipeline {
        stage('Prepare Workspace') {
             steps {
                 // Checkout the Git repository to Jenkins workspace
-                git 'https://github.com/yourusername/your-repo.git'
+                git 'https://github.com/Shanmugaraja-18/dockerassessment.git'
 
                 // Copy Dockerfile and application files into Jenkins workspace
                 sh 'cp Dockerfile .'
